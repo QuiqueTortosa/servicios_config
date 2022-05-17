@@ -1,0 +1,21 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: servicio-productos
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: ''
+    url: jdbc:mysql://${hostdb}:3306/pedidos?serverTimezone=UTC
+    username: root
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${hostseureka}:8761/eureka
+  instance:
+    hostname: ${hostreal}
