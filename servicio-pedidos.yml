@@ -6,7 +6,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: ''
-    url: jdbc:mysql://192.168.1.12:3306/pedidosbd?serverTimezone=UTC
+    url: jdbc:mysql://${hostdb}:3306/pedidosbd?serverTimezone=UTC
     username: root
   jpa:
     hibernate:
@@ -16,6 +16,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.1.12:8761/eureka
+      defaultZone: http://${hostseureka}:8761/eureka
   instance:
-    hostname: 192.168.1.12
+    hostname: ${hostreal}
